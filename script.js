@@ -20,10 +20,16 @@ function createListElement() {
 
 //add List after click
 button.addEventListener("click", () => {
-  if (input.value.length > 0) createListElement();
+  if (input.value.length > 0 && input.value.replace(/\s/g, ""))
+    createListElement();
 });
 
 //add list after keypress
 input.addEventListener("keypress", event => {
-  if (input.value.length > 0 && event.keyCode === 13) createListElement();
+  if (
+    input.value.length > 0 &&
+    event.keyCode === 13 &&
+    input.value.replace(/\s/g, "")
+  )
+    createListElement();
 });
