@@ -9,6 +9,11 @@ function createListElement() {
   newLi.appendChild(document.createTextNode(input.value));
   //append list element in newDiv
   newDiv.appendChild(newLi);
+  //create coresponding delbutton
+  var delBtn = document.createElement("button");
+  delBtn.appendChild(document.createTextNode("delete"));
+  delBtn.addEventListener("click", () => newDiv.removeChild(newLi));
+  newLi.appendChild(delBtn);
   //clean input field
   input.value = "";
 }
