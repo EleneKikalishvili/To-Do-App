@@ -20,8 +20,8 @@ function createListElement() {
   //create coresponding delbutton
   let delBtn = document.createElement("button");
   delBtn.appendChild(document.createTextNode("delete"));
-  delBtn.addEventListener("click", () => ul.removeChild(newDiv));
   newDiv.appendChild(delBtn);
+  delBtn.addEventListener("click", () => ul.removeChild(newDiv));
   //clean input field
   input.value = "";
 }
