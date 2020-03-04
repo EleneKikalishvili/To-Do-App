@@ -9,11 +9,19 @@ function createListElement() {
   newLi.appendChild(document.createTextNode(input.value));
   //append list element in newDiv
   newDiv.appendChild(newLi);
+  //create rename button
+  let renBtn = document.createElement("button");
+  renBtn.appendChild(document.createTextNode("rename"));
+  newDiv.appendChild(renBtn);
+  renBtn.addEventListener(
+    "click",
+    () => (newLi.innerHTML = window.prompt("make changes: "))
+  );
   //create coresponding delbutton
   let delBtn = document.createElement("button");
   delBtn.appendChild(document.createTextNode("delete"));
-  delBtn.addEventListener("click", () => newDiv.removeChild(newLi));
-  newLi.appendChild(delBtn);
+  delBtn.addEventListener("click", () => ul.removeChild(newDiv));
+  newDiv.appendChild(delBtn);
   //clean input field
   input.value = "";
 }
